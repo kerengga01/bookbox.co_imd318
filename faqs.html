@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4fb5f7776a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="grid-header">
+            <div class="logo">
+                <a href="index.html"><img src="image/logo.png" alt="Logo"></a>
+            </div>
+            <nav>
+                <a href="group.html">Our Group</a>
+                <div class="dropdown">
+                    <a href="catalogue.html" class="dropbtn">Catalogue</a>
+                    <div class="dropdown-content">
+                        <a href="eng.html">English</a>
+                        <a href="malay.html">Malay</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Products</a>
+                    <div class="dropdown-content">
+                        <a href="oleander.html">Oleander</a>
+                        <a href="azalea.html">Azalea</a>
+                        <a href="daffodil.html">Daffodil</a>
+                    </div>
+                </div>
+                <a href="customize.html">Build a Box</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Community</a>
+                    <div class="dropdown-content">
+                        <a href="faqs.html">FAQs</a>
+                        <a href="feedback.html">Feedback</a>
+                        <a href="promotion.html">Promotion</a>
+                    </div>
+                </div>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <div class="cart">
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping fa-sm" style="color: #333333;"></i></a>
+            </div>
+        </header>
+        <main class="grid-main">
+            <section class="qna-section">
+                <h2 class="section-title">Questions & Answers</h2>
+                <div class="qna-item">
+                    <h3>Q: What is Bookbox?</h3>
+                    <p>A: Bookbox provides a variety of gift services, including delivering a curated assortment of presents such as flowers, books, chocolates, and more to your doorstep or by pickup, suited to your reading tastes and any gifts that you require.</p>
+                </div>
+                <div class="qna-item">
+                    <h3>Q: How do I purchase?</h3>
+                    <p>A: To make a purchase on our website, select your desired combo package or gift and provide the required information. Once finished, you will begin to receive the gifts according to your preferences.</p>
+                </div>
+                <div class="qna-item">
+                    <h3>Q: Can I customize my gift selections?</h3>
+                    <p>A: Yes, you can customize your gift selections based on your preferences and interests. Our team will curate the best gifts for you accordingly.</p>
+                </div>
+            </section>
+        </main>
+        <footer class="grid-footer">
+            <div class="footer-table-wrapper">
+                <table class="footer-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%;"><a href="index.html"><img src="image/logo.png" alt="Logo" class="logo-img" style="width: 100px; height: 90px;"></a></th>
+                            <td style="font-weight: bold; text-align: center; vertical-align: bottom;">About Us</td>
+                            <td style="font-weight: bold; text-align: center; vertical-align: bottom;">Account</td>
+                            <td style="font-weight: bold; text-align: center; vertical-align: bottom;">Social Media</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">
+                                <p>B-02-03, Tamarind Square, Persiaran Multimedia,</p>
+                                <p>Cyber 10, 63000 Cyberjaya, Selangor</p>
+                                <p>+6012-345 6789</p>
+                                <p>bookbox@gmail.com</p>
+                            </td>
+                            <td class="footer-link"><a href="feedback.html">Feedback</a></td>
+                            <td class="footer-link"><a href="contact.html">Contact Us</a></td>
+                            <td class="footer-link"><a href="https://www.instagram.com/invites/contact/?igsh=68cx2s5jbygj&utm_content=q84tgo" target="_blank"><i class="fa-brands fa-instagram" style="color: #333333;"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td class="footer-link"><a href="faqs.html">FAQs</a></td>
+                            <td class="footer-link"><a href="policy.html">Policy</a></td>
+                            <td class="footer-link"><a href="https://x.com/w_w_o3o_?t=VC7ogPPgYlTFdny6xGhUpA&s=08" target="_blank"><i class="fa-brands fa-x-twitter" style="color: #333333;"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td class="footer-link"></td>
+                            <td class="footer-link"><a href="cart.html">Cart</a></td>
+                            <td class="footer-link"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="font-weight: bold;">&copy; 2024 BookBox.Co. All rights reserved.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const qnaItems = document.querySelectorAll(".qna-item h3");
+
+            qnaItems.forEach(item => {
+                item.addEventListener("click", function() {
+                    const answer = this.nextElementSibling;
+                    const isVisible = answer.style.display === "block";
+                    
+                    document.querySelectorAll(".qna-item p").forEach(p => p.style.display = "none");
+                    document.querySelectorAll(".qna-item h3").forEach(h3 => h3.classList.remove("active"));
+
+                    if (!isVisible) {
+                        answer.style.display = "block";
+                        this.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

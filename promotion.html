@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotion</title>
+    <link rel="stylesheet" href="promotion.css">
+</head>
+<body>
+    <div class="header-container">
+        <div class="image">
+            <img src="image/book.png" alt="Image 1">
+        </div>
+        <div class="word">
+            <h2>PROMOTION</h2>
+        </div>
+        <div class="image">
+            <img src="image/book.png" alt="Image 2">
+        </div>
+    </div>
+
+    <div class="promo-text">
+        <p>Some special promotion for limited time only (＾▽＾)</p>
+        <p>Get some special giftbox to someone special in your heart. Win your lover heart with their favourite books (>‿◠)&#128157;</p>
+    </div>
+
+    <div class="promo-images">
+        <img id="myImg1" src="image/s1.jpg" alt="Happy Halloween">
+        <img id="myImg2" src="image/s2.jpeg" alt="Happy Independent Women">
+        <img id="myImg3" src="image/s3.jpeg" alt="Happy Mother Day">
+        <img id="myImg4" src="image/s4.jpeg" alt="Happy World Mental Health Day">
+        <img id="myImg5" src="image/s5.jpg" alt="Happy International Friendship Day">
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
+
+    <div class="special-code">
+        <img src="image/s8.png" alt="Special code">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the images and insert them inside the modal - use their "alt" text as a caption
+        var images = document.querySelectorAll('.promo-images img');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        images.forEach(img => {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>

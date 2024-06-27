@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="homepage" content="width=device-width, initial-scale=1.0">
+    <title>Books Catalogue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4fb5f7776a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="catalogue.css">
+</head>
+<body>
+    <div class="container">
+        <header class="grid-header">
+            <div class="logo">
+                <a href="index.html"><img src="image/logo.png" alt="Logo"></a>
+            </div>
+            <nav>
+                <div class="dropdown">
+                    <a href="catalogue.html" class="dropbtn">Catalogue</a>
+                    <div class="dropdown-content">
+                        <a href="eng.html">English</a>
+                        <a href="malay.html">Malay</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                  <a href="#" class="dropbtn">Products</a>
+                  <div class="dropdown-content">
+                      <a href="oleander.html">Oleander</a>
+                      <a href="azalea.html">Azalea</a>
+                      <a href="daffodil.html">Daffodil</a>
+                  </div>
+              </div>
+                <a href="customize.html">Build a Box</a>
+                <div class="dropdown">
+                  <a href="#" class="dropbtn">Community</a>
+                  <div class="dropdown-content">
+                      <a href="faqs.html">FQAs</a>
+                      <a href="feedback.html">Feedback</a>
+                      <a href="promotion.html">Promotion</a>
+                  </div>
+              </div>
+                <a href="contact.html">Contact Us</a>                  
+            </nav>
+            <div class="cart">
+              <a href="cart.html"><i class="fa-solid fa-cart-shopping fa-sm" style="color: #333333;"></i></a>
+          </div>
+        </header>
+        <main class="grid-main">
+            <section class="intro-section">
+            </section>
+        </main>
+        <footer class="grid-footer">
+            <div class="footer-table-wrapper">
+                <table class="footer-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 40%;"><a href="index.html"><img src="image/logo.png" alt="Logo" class="logo-img" style="width: 100px; height: 90px;"></a></th>
+                        <td style="font-weight: bold; text-align: center; vertical-align: bottom;">ABOUT US</td>
+                        <td style="font-weight: bold; text-align: center; vertical-align: bottom;">ACCOUNT</td>
+                        <td style="font-weight: bold; text-align: center; vertical-align: bottom;">SOCIAL MEDIA</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+<div class="container">
+    <div class="slider-header">
+      <h1>&#128073 English Books &#128072</h1>
+    </div>
+    <div id="slider-1" class="slider-wrapper">
+      <button id="prev-slide" class="slide-button material-symbols-rounded"><</button>
+      <div class="image-list">
+        <img src="image/themountainisyou.jpg" alt="me" class="image-item">
+        <img src="image/rpo.jpg" alt="me" class="image-item">
+        <img src="image/ag_.jpg" alt="img-1" class="image-item">
+        <img src="image/iwanttoeat.jpg" alt="img-2" class="image-item">
+        <img src="image/mc.jpg" alt="img-3" class="image-item">
+        <img src="image/tt.jpg" alt="img-4" class="image-item">
+        <img src="image/tcnd.jpg" alt="img-5" class="image-item">
+        <img src="image/imgladmymomdied.png" alt="hurul" class="image-item">
+        <img src="image/mby2.jpg" alt="sarah" class="image-item">
+        <img src="image/welcomehome.jpg" alt="yan" class="image-item">
+      </div>
+      <button id="next-slide" class="slide-button material-symbols-rounded">></button>
+    </div>
+    <div class="slider-scrollbar">
+      <div class="scrollbar-track">
+        <div class="scrollbar-thumb"></div>
+      </div>
+    </div>
+    <p>Click here to see <a href="eng.html">more</a></p>
+  </div>
+
+  <div class="container">
+    <div class="slider-header">
+      <h1>&#128073 Malay Books &#128072</h1>
+    </div>
+    <div id="slider-2" class="slider-wrapper">
+      <button id="prev-slide" class="slide-button material-symbols-rounded"><</button>
+      <div class="image-list">
+        <img src="image/hujan.jpg" alt="me" class="image-item">
+        <img src="image/ti.jpg" alt="me" class="image-item">
+        <img src="image/ppsk.jpg" alt="img-1" class="image-item">
+        <img src="image/koyak.jpg" alt="img-2" class="image-item">
+        <img src="image/rtmb.jpg" alt="img-3" class="image-item">
+        <img src="image/pm.jpg" alt="img-4" class="image-item">
+        <img src="image/mi.jpg" alt="img-5" class="image-item">
+        <img src="image/smb.jpg" alt="hurul" class="image-item">
+        <img src="image/sa.jpg" alt="sarah" class="image-item">
+        <img src="image/introvert.jpg" alt="yan" class="image-item">
+      </div>
+      <button id="next-slide" class="slide-button material-symbols-rounded">></button>
+    </div>
+    <div class="slider-scrollbar">
+      <div class="scrollbar-track">
+        <div class="scrollbar-thumb"></div>
+      </div>
+    </div>
+    <p>Click here to see <a href="malay.html">more</a></p>
+  </div>
+ </div>
+</div>
+
+  <script>
+    const initSlider = (sliderId) => {
+      const sliderWrapper = document.querySelector(`#${sliderId}`);
+      const imageList = sliderWrapper.querySelector(".image-list");
+      const slideButtons = sliderWrapper.querySelectorAll(".slide-button");
+      const sliderScrollbar = sliderWrapper.nextElementSibling;
+      const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+      const maxScrollleft = imageList.scrollWidth - imageList.clientWidth;
+
+      scrollbarThumb.addEventListener("mousedown", (e) => {
+          const startX = e.clientX;
+          const thumbPosition = scrollbarThumb.offsetLeft;
+
+          const handleMouseMove = (e) => {
+              const deltaX = e.clientX - startX;
+              const newThumbPosition = thumbPosition + deltaX;
+              const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+
+              const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+              const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollleft;
+
+              scrollbarThumb.style.left = `${boundedPosition}px`;
+              imageList.scrollLeft = scrollPosition;
+          }
+
+          const handleMouseUp = () => {
+              document.removeEventListener("mousemove", handleMouseMove);
+              document.removeEventListener("mouseup", handleMouseUp);
+          }
+
+          document.addEventListener("mousemove", handleMouseMove);
+          document.addEventListener("mouseup", handleMouseUp);
+      });
+
+      slideButtons.forEach(button => {
+          button.addEventListener("click", () => {
+              const direction = button.id.includes("prev") ? -1 : 1;
+              const scrollAmount = imageList.clientWidth * direction;
+              imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+          });
+      });
+
+      const handleSlideButtons = () => {
+          slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "block";
+          slideButtons[1].style.display = imageList.scrollLeft >= maxScrollleft ? "none" : "block";
+      }
+
+      const updateScrollThumbPosition = () => {
+          const scrollPosition = imageList.scrollLeft;
+          const thumbPosition = (scrollPosition / maxScrollleft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+          scrollbarThumb.style.left = `${thumbPosition}px`;
+      }
+
+      imageList.addEventListener("scroll", () => {
+          handleSlideButtons();
+          updateScrollThumbPosition();
+      });
+
+      handleSlideButtons(); // Initialize button visibility
+  }
+
+  window.addEventListener("load", () => {
+      initSlider("slider-1");
+      initSlider("slider-2");
+  });
+  </script>
+
+                    <tr>
+                      <td rowspan="3">
+                        <p>B-02-03, Tamarind Square, Persiaran Multimedia,</p>
+                        <p>Cyber 10, 63000 Cyberjaya,Selangor</p>
+                        <p>+6012-345 6789</p>
+                        <p>bookbox@gmail.com</p>
+                    </td>
+                    <td class="footer-link"><a href="feedback.html">Feedback</a></td>
+                    <td class="footer-link"><a href="contact.html">Contact Us</a></td>
+                    <td class="footer-link"><a href="https://www.instagram.com/invites/contact/?igsh=68cx2s5jbygj&utm_content=q84tgo" target="_blank"><i class="fa-brands fa-instagram" style="color: #333333;"></i></a></td>
+                </tr>
+                <tr>
+                    <td class="footer-link"><a href="faqs.html">FAQs</a></td>
+                    <td class="footer-link"><a href="policy.html">Policy</a></td>
+                    <td class="footer-link"><a href="https://x.com/w_w_o3o_?t=VC7ogPPgYlTFdny6xGhUpA&s=08" target="_blank"><i class="fa-brands fa-x-twitter" style="color: #333333;"></i></a></td>
+                </tr>
+                <tr>
+                    <td class="footer-link"></td>
+                    <td class="footer-link"><a href="cart.html">Cart</a></td>
+                    <td class="footer-link"></td>
+                </tr>
+                <tr>
+                  <td colspan="4"></td>
+                </tr>
+                    <tr>
+                        <td colspan="4" style="font-weight: bold;">&copy; 2024 BookBox.Co. All rights reserved.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </footer>
+    </div>
+</body>
+</html>

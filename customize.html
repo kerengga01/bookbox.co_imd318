@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="homepage" content="width=device-width, initial-scale=1.0">
+    <title>Build a Box</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4fb5f7776a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="customize.css">
+</head>
+<body>
+    <div class="container">
+        <header class="grid-header">
+            <div class="logo">
+                <a href="index.html"><img src="image/logo.png" alt="Logo"></a>
+            </div>
+            <nav>
+                <div class="dropdown">
+                    <a href="catalogue.html" class="dropbtn">Catalogue</a>
+                    <div class="dropdown-content">
+                        <a href="eng.html">English</a>
+                        <a href="malay.html">Malay</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                  <a href="#" class="dropbtn">Products</a>
+                  <div class="dropdown-content">
+                      <a href="oleander.html">Oleander</a>
+                      <a href="azalea.html">Azalea</a>
+                      <a href="daffodil.html">Daffodil</a>
+                  </div>
+              </div>
+                <a href="customize.html">Build a Box</a>
+                <div class="dropdown">
+                  <a href="#" class="dropbtn">Community</a>
+                  <div class="dropdown-content">
+                      <a href="faqs.html">FQAs</a>
+                      <a href="feedback.html">Feedback</a>
+                      <a href="promotion.html">Promotion</a>
+                  </div>
+              </div>
+                <a href="contact.html">Contact Us</a>                  
+            </nav>
+            <div class="cart">
+              <a href="cart.html"><i class="fa-solid fa-cart-shopping fa-sm" style="color: #333333;"></i></a>
+          </div>
+        </header>
+        <main class="grid-main">
+            <section class="intro-section">
+            </section>
+        </main>
+        <footer class="grid-footer">
+            <div class="footer-table-wrapper">
+                <table class="footer-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 40%;"><a href="index.html"><img src="image/logo.png" alt="Logo" class="logo-img" style="width: 100px; height: 90px;"></a></th>
+                        <td style="font-weight: bold; text-align: center; vertical-align: bottom;">ABOUT US</td>
+                        <td style="font-weight: bold; text-align: center; vertical-align: bottom;">ACCOUNT</td>
+                        <td style="font-weight: bold; text-align: center; vertical-align: bottom;">SOCIAL MEDIA</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+<header>
+        <center><h1>Build a Box</h1></center>
+    </header>
+    <main>
+        <center><div class="container">
+            <form id="contact-form" method="post" action="https://script.google.com/macros/s/AKfycbzQjlIQwBxulqpbds7UMuKCyuL685VFBMtdBOsxSobtBYw42C4zOL4eN77hMg4HkIPkwA/exec">
+            
+            <section id="buyer-info">
+                <h2>Buyer Information</h2>
+                <input type="text" id="buyerName" name="buyerName" placeholder="Your Name" required>
+                <input type="tel" id="buyerPhone" name="buyerPhone" placeholder="Your Phone Number" required>
+                <textarea id="buyerAddress" name="buyerAddress" placeholder="Your Address" required></textarea>
+            </section>
+
+            <section id="books">
+                <h2>Books</h2>
+                <textarea id="bookList" name="bookList" placeholder="Write the book titles here..."></textarea>
+            </section>
+
+            <section id="gifts">
+                <h2>Gifts</h2>
+                <textarea id="giftList" name="giftList" placeholder="Write the gifts (e.g., Chocolate, Teddy Bear, Fresh Flowers) here..."></textarea>
+            </section>
+
+            <section id="wishes">
+                <h2>Wishes</h2>
+                <textarea id="wishMessage" name="wishMessage" placeholder="Write your wishes here..."></textarea>
+            </section>
+
+            <section id="notes">
+                <h2>Notes</h2>
+                <textarea id="notesMessage" name="notesMessage" placeholder="Add any notes here..."></textarea>
+            </section>
+
+            <section id="price-range">
+                <h2>Price Range</h2>
+                <input type="range" id="priceRange" name="priceRange" min="50" max="500" step="5">
+                <p>Selected Price: RM<span id="selectedPrice">55</span></p>
+            </section>
+
+            <footer>
+                <center><button type="submit" id="submitBox">Submit Your Box</button></center>
+            </footer>
+            </form>
+        </div></center>
+    </main>
+
+ <script src="Google Sheet.js"></script> 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const priceRange = document.getElementById('priceRange');
+            const selectedPrice = document.getElementById('selectedPrice');
+            
+            priceRange.addEventListener('input', function () {
+                selectedPrice.textContent = priceRange.value;
+            });
+
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent form from submitting
+                
+                const bookList = document.getElementById('bookList').value.split('\n').filter(Boolean);
+                const giftList = document.getElementById('giftList').value.split('\n').filter(Boolean);
+                const wishMessage = document.getElementById('wishMessage').value;
+                const notesMessage = document.getElementById('notesMessage').value;
+                const price = priceRange.value;
+                const buyerName = document.getElementById('buyerName').value;
+                const buyerPhone = document.getElementById('buyerPhone').value;
+                const buyerAddress = document.getElementById('buyerAddress').value;
+
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbzQjlIQwBxulqpbds7UMuKCyuL685VFBMtdBOsxSobtBYw42C4zOL4eN77hMg4HkIPkwA/exec';
+
+                fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(document.getElementById('contact-form'))
+                })
+                .then(response => {
+                    alert('Thank you! Your form is submitted successfully.');
+                    window.location.reload();
+                })
+                .catch(error => console.error('Error!', error.message));
+
+                alert(`Your box has been submitted!\nName: ${buyerName}\nPhone: ${buyerPhone}\nAddress: ${buyerAddress}\nBooks: ${bookList.join(', ')}\nGifts: ${giftList.join(', ')}\nWishes: ${wishMessage}\nNotes: ${notesMessage}\nPrice: RM${price}`);
+            });
+        });
+    </script>
+
+                    <tr>
+                      <td rowspan="3">
+                        <p>B-02-03, Tamarind Square, Persiaran Multimedia,</p>
+                        <p>Cyber 10, 63000 Cyberjaya,Selangor</p>
+                        <p>+6012-345 6789</p>
+                        <p>bookbox@gmail.com</p>
+                    </td>
+                    <td class="footer-link"><a href="feedback.html">Feedback</a></td>
+                    <td class="footer-link"><a href="contact.html">Contact Us</a></td>
+                    <td class="footer-link"><a href="https://www.instagram.com/invites/contact/?igsh=68cx2s5jbygj&utm_content=q84tgo" target="_blank"><i class="fa-brands fa-instagram" style="color: #333333;"></i></a></td>
+                </tr>
+                <tr>
+                    <td class="footer-link"><a href="faqs.html">FAQs</a></td>
+                    <td class="footer-link"><a href="policy.html">Policy</a></td>
+                    <td class="footer-link"><a href="https://x.com/w_w_o3o_?t=VC7ogPPgYlTFdny6xGhUpA&s=08" target="_blank"><i class="fa-brands fa-x-twitter" style="color: #333333;"></i></a></td>
+                </tr>
+                <tr>
+                    <td class="footer-link"></td>
+                    <td class="footer-link"><a href="cart.html">Cart</a></td>
+                    <td class="footer-link"></td>
+                </tr>
+                <tr>
+                  <td colspan="4"></td>
+                </tr>
+                    <tr>
+                        <td colspan="4" style="font-weight: bold;">&copy; 2024 BookBox.Co. All rights reserved.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </footer>
+    </div>
+</body>
+</html>
